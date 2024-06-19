@@ -1,0 +1,19 @@
+{
+    "name": "Heiko Ruprecht",
+    "known": "Schauspieler",
+    "description": "Bekannt durch seine Rolle als Hans Gruber in der ZDF-Serie „Der Bergdoktor‟ begeistert der 1972 in Friedrichshafen geborene BOGYaner immer wieder im Theater, Film und Fernsehen.",
+    "quote": "Das positive Denken ist eine Aufgabe, die jedem schon einmal begegnet ist.",
+    "cover": "heiko-ruprecht.jpg",
+    "videos": [
+        {
+            "title": "Mobbing in der Schule",
+            "thumbnail": "mobbing.png",
+            "video": "mobbing.mp4"
+        },
+        {
+            "title": "Theater VS Fernsehen",
+            "thumbnail": "theater.png",
+            "video": "theater.mp4"
+        }
+    ]
+}
