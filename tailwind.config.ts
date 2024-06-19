@@ -8,12 +8,7 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      'primary': '#3270af',
-      'primary-light': '#5b9fe2',
-      'primary-dark': '#275787',
-      'primary-text': '#ffffff',
-      'secondary-text': '#dddddd',
-      'divider': '#aaaaaa',
+      'white': '#ffffff',
       'black': '#000000',
     },
     screens: {
@@ -28,6 +23,12 @@ const config: Config = {
       'y-xl': { 'raw': '(min-height: 1280px)' },
       'y-2xl': { 'raw': '(min-height: 1536px)' },
     },
+    extend: {
+      height: {
+        'svh': '100svh',
+        'dvh': '100dvh',
+      }
+    }
   },
   plugins: [],
 };

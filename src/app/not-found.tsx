@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function NotFound() {
+export default function NotFoundPage() {
 
   const router = useRouter();
   const [redirect, setRedirect] = useState(8);
@@ -24,8 +24,8 @@ export default function NotFound() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center space-y-4">
-      <h1 className="text-5xl">Seite nicht gefunden!</h1>
+    <div className="flex flex-col justify-center items-center space-y-4">
+      <h1 className="text-5xl font-bold">Seite nicht gefunden!</h1>
       <p className="italic">Weiterleitung zur Startseite in {redirect} Sekunden ...</p>
     </div>
   );

@@ -5,5 +5,5 @@
 :root {
   background: rgb(45,85,147);
   background: linear-gradient(180deg, rgba(45,85,147,1) 0%, rgba(99,149,189,1) 38%, rgba(117,170,200,1) 70%, rgba(142,200,217,1) 100%);
-  @apply text-primary-text text-3xl;
+  @apply text-white text-[1.5vw];
 }

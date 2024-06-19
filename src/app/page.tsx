@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="flex justify-center items-center">
       <Link href="/details/heiko-ruprecht">
         Heiko Ruprecht
       </Link>
