@@ -1,7 +1,6 @@
 "use client";
 
 import NotFound from "@/app/not-found";
-import { COVER_URL, THUMBNAIL_URL } from "@/utils/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -53,8 +52,9 @@ function Info({ person }: { person: Person | null }) {
         <p className="font-light text-xl mb-6">{person.known.toUpperCase()}</p>
         <p>{person.description}</p>
       </div>
-      <p className="mb-28 font-medium text-lg">„{person.quote}”</p>
-      <Image src={COVER_URL + person.cover} alt={person.name} fill priority className="object-cover -z-30"></Image>
+      <p className="mb-28 z-20 font-medium text-lg">„{person.quote}”</p>
+      <div className="absolute w-full h-full left-0 top-0 z-10 bg-gradient-to-r from-black/80 to-black/30"></div>
+      <Image src={process.env.COVER_URL + person.cover} alt={person.name} fill priority className="object-cover"></Image>
     </div>
   );
 
@@ -87,7 +87,8 @@ function Videos({ person }: { person: Person | null }) {
                 </g>
               </g>
             </svg>
-            <Image src={THUMBNAIL_URL + video.thumbnail} alt={video.name} fill sizes="40vw" className="object-cover -z-20"></Image>
+              <div className="absolute w-full h-2/3 left-0 bottom-0 z-10 bg-gradient-to-t from-black/90 to-transparent"></div>
+              <Image src={process.env.THUMBNAIL_URL + video.thumbnail} alt={video.name} fill sizes="50vw" className="object-cover"></Image>
           </Link>
         ))}
       </div>

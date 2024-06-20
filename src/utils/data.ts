@@ -1,4 +1,3 @@
-import { DATA_URL } from "./constants";
 import { Person } from "./types";
 import yaml from "js-yaml";
 
@@ -11,7 +10,7 @@ export async function getPerson(id: string, setPerson: (person: Person) => void,
 
   console.log("Fetch " + id + ".yml");
 
-  let response = await fetch(DATA_URL + id + ".yml");
+  let response = await fetch(process.env.DATA_URL + id + ".yml");
   if (response == null || !response.ok) {
     fail(response.status + ": " + response.statusText);
     return;

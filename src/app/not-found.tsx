@@ -14,12 +14,15 @@ export default function NotFoundPage() {
       setRedirect(redirect => redirect - 1);
     }, 1000);
 
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       clearInterval(interval);
       router.push("/");
     }, 8000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
 
   }, []);
 
