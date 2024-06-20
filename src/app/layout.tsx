@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className={poppins.className}>
-        <main className="w-full min-h-svh relative grid">
+        <main className="w-full min-h-screen relative grid">
           {children}
           <Waves />
         </main>

@@ -75,7 +75,7 @@ function Videos({ person }: { person: Person | null }) {
       </Link>
       <div className="w-full flex flex-col items-center space-y-4">
         {person.videos.map(video => (
-          <Link key={video.id} href={"/video/" + person.id + "/" + video.id}
+          <Link key={video.id} href={"/" + person.id + "/" + video.id}
           className="relative w-full h-44 overflow-hidden rounded-xl border-white border-[0.1rem] flex justify-center items-end">
             <h2 className="mb-4">{video.name}</h2>
             <svg viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" className="absolute left-4 top-4 w-8">
