@@ -3,6 +3,7 @@ known: "Beruf"
 description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
 quote: "Ich kann, weil ich will, was ich muss."
 cover: "template.jpg"
+abi: 2000
 videos:
 - id: "thema1"
   name: "Thema 1"
@@ -12,3 +13,7 @@ videos:
   name: "Thema 2"
   thumbnail: "thema2.png"
   video: "thema2.mp4"
+- id: "thema3"
+  name: "Thema 3"
+  thumbnail: "thema3.png"
+  video: "thema3.mp4"

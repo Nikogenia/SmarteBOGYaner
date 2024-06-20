@@ -5,6 +5,7 @@ export type Person = {
   "description": string,
   "quote": string,
   "cover": string,
+  "abi": number,
   "videos": [
     {
       "id": string,

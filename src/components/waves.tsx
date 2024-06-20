@@ -1,7 +1,7 @@
 export default function Waves() {
 
   return (
-    <div className="absolute bottom-0 w-full">
+    <div className="absolute bottom-0 w-full z-50">
       <svg viewBox="0 0 1920 204" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_14_26)">
           <path d="M0 58.752L45.7333 73.9009C91.4667 88.8229 182.667 119.461 274.667 128.369C365.733 137.617 457.333 125.135 548 131.376C640 137.617 732 161.447 822.667 152.539C914.267 143.291 1005.33 101.305 1097.33 85.986C1188.53 70.6669 1280 83.1491 1372 79.9151C1462.8 76.908 1554.67 58.752 1645.33 61.7591C1737.2 64.9931 1828 88.8229 1874.67 101.135L1920 113.22V204H1874.27C1828.53 204 1737.33 204 1645.33 204C1554.27 204 1462.67 204 1372 204C1280 204 1188 204 1097.33 204C1005.73 204 914.667 204 822.667 204C731.467 204 640 204 548 204C457.2 204 365.333 204 274.667 204C182.8 204 92 204 45.3333 204H0V58.752Z" fill="url(#paint0_linear_14_26)" />
@@ -27,6 +27,7 @@ export default function Waves() {
           </clipPath>
         </defs>
       </svg>
+      <div className="absolute left-1.5 bottom-1.5 text-xs/none opacity-20">© 2024 Nikolas Beyer</div>
     </div>
   );
 
