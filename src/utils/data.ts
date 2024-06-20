@@ -2,7 +2,7 @@ import { DATA_URL } from "./constants";
 import { Person } from "./types";
 import yaml from "js-yaml";
 
-export async function getPerson(id: string, setPerson: (person: Person) => void, setNotFound: (notFound: boolean) => void) {
+export async function getPerson(id: string, setPerson: (person: Person) => void, setNotFound: (notFound: boolean) => void, setError: (error: Error) => void) {
   
   function fail(reason: any) {
     console.error(reason);
@@ -23,6 +23,12 @@ export async function getPerson(id: string, setPerson: (person: Person) => void,
     return;
   }
 
-  setPerson({ ...yaml.load(text, {onWarning: fail}) as Person, id: id });
+  try {
+    let data = yaml.load(text, {onWarning: setError}) as Person;
+    setPerson({ ...data, id: id });
+  } catch (error: any) {
+    setError(error);
+    return;
+  }
 
 }

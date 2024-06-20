@@ -7,20 +7,24 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Person } from "@/utils/types";
 import { getPerson } from "@/utils/data";
+import ErrorPage from "@/app/error";
 
 export default function PersonPage({ params }: { params: { person: string } }) {
 
   const [person, setPerson] = useState<Person | null>(null);
   const [notFound, setNotFound] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    getPerson(params.person, setPerson, setNotFound);
+    getPerson(params.person, setPerson, setNotFound, setError);
   }, []);
-
-  console.log("Person", person);
 
   if (notFound) {
     return <NotFound />;
+  }
+
+  if (error != null) {
+    return <ErrorPage error={error} reset={() => setError(null)} />;
   }
 
   return (
@@ -71,7 +75,7 @@ function Videos({ person }: { person: Person | null }) {
       </Link>
       <div className="w-full flex flex-col items-center space-y-4">
         {person.videos.map(video => (
-          <Link key={video.id} href={"/video/" + video.video}
+          <Link key={video.id} href={"/video/" + person.id + "/" + video.id}
           className="relative w-full h-44 overflow-hidden rounded-xl border-white border-[0.1rem] flex justify-center items-end">
             <h2 className="mb-4">{video.name}</h2>
             <svg viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" className="absolute left-4 top-4 w-8">
