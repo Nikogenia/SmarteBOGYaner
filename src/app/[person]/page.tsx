@@ -57,7 +57,7 @@ function Info({ person }: { person: Person | null }) {
         <p>{person.description}</p>
       </div>
       <p className="mb-28 z-20 font-medium text-lg">„{person.quote}”</p>
-      <div className="absolute w-full h-full left-0 top-0 z-10 bg-gradient-to-r from-black/80 to-black/30"></div>
+      <div className="absolute w-full h-full left-0 top-0 z-10 bg-gradient-to-r from-black/60 to-black/20"></div>
       <Image src={process.env.COVER_URL + person.cover} alt={person.name} fill priority className="object-cover"></Image>
     </div>
   );
