@@ -24,7 +24,7 @@ export default function NotFoundPage() {
       clearTimeout(timeout);
     };
 
-  }, []);
+  }, [router]);
 
   return (
     <div className="flex flex-col justify-center items-center space-y-4">

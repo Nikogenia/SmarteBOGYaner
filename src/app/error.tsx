@@ -24,7 +24,7 @@ export default function ErrorPage({error, reset}: {
 
     return () => clearInterval(interval);
 
-  }, []);
+  }, [router]);
 
   return (
     <div className="p-8 flex flex-col justify-center items-center space-y-4">

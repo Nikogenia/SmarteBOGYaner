@@ -1,14 +1,13 @@
 "use client";
 
 import NotFound from "@/app/not-found";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Person } from "@/utils/types";
 import { getPerson } from "@/utils/data";
 import ErrorPage from "@/app/error";
 
-export default function PersonPage({ params }: { params: { person: string } }) {
+export default function VideoPage({ params }: { params: { person: string, video: string } }) {
 
   const [person, setPerson] = useState<Person | null>(null);
   const [notFound, setNotFound] = useState(false);
@@ -27,9 +26,7 @@ export default function PersonPage({ params }: { params: { person: string } }) {
   }
 
   return (
-    <div className="grid grid-rows-1 grid-cols-[auto_24rem]">
-      <Info person={person}></Info>
-      <Videos person={person}></Videos>
+    <div className="">
     </div>
   );
 
@@ -58,7 +55,6 @@ function Info({ person }: { person: Person | null }) {
       </div>
       <p className="mb-28 z-20 font-medium text-lg">„{person.quote}”</p>
       <div className="absolute w-full h-full left-0 top-0 z-10 bg-gradient-to-r from-black/80 to-black/30"></div>
-      <Image src={process.env.COVER_URL + person.cover} alt={person.name} fill priority className="object-cover"></Image>
     </div>
   );
 
@@ -113,7 +109,6 @@ function Videos({ person }: { person: Person | null }) {
                 </g>
               </svg>
               <div className="absolute w-full h-2/3 left-0 bottom-0 z-10 bg-gradient-to-t from-black/90 to-transparent"></div>
-              <Image src={process.env.THUMBNAIL_URL + video.thumbnail} alt={video.name} fill sizes="50vw" className="object-cover"></Image>
             </Link>
           ))}
         </div>
